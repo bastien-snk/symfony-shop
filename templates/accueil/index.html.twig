@@ -2,6 +2,16 @@
 
 {% block title %}Hello AccueilController!{% endblock %}
 
+{% block head_css %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+{% endblock %}
+{% block head_js %}
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+{% endblock %}
+
+
 {% block body %}
 <style>
     .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
@@ -9,12 +19,15 @@
 </style>
 
 <div class="example-wrapper">
-    <h1>{{theopayou}}Hello {{ controller_name }}! ✅</h1>
+
+    <h1>Hello {{ controller_name }}! ✅</h1>
+
 
     This friendly message is coming from:
     <ul>
         <li>Your controller at <code><a href="{{ '/var/www/html/boutique/src/Controller/AccueilController.php'|file_link(0) }}">src/Controller/AccueilController.php</a></code></li>
         <li>Your template at <code><a href="{{ '/var/www/html/boutique/templates/accueil/index.html.twig'|file_link(0) }}">templates/accueil/index.html.twig</a></code></li>
+        <li>Déconnexion: <code><a href="{{ path("app_logout") }}">déconnexion</a></code></li>
     </ul>
 </div>
 {% endblock %}
