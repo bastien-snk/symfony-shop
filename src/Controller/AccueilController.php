@@ -16,6 +16,17 @@ class AccueilController extends AbstractController
         return $this->render('accueil/index.html.twig', [
             'controller_name' => 'Connexion',
 	    'date' => date("d:M:y"),
+        'connected' => "false",
+        ]);
+    }
+
+    /**
+     * @Route("/", name="logged")
+     */
+    public function logged(): Response
+    {
+        return $this->render('profile/profile.html.twig', [
+            'controller_name' => 'Profil',
         ]);
     }
 }
