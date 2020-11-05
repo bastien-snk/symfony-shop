@@ -4,6 +4,7 @@ namespace App\DataFixtures;
 
 use App\Entity\Categorie;
 use App\Entity\Produit;
+use App\Entity\Tag;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 
@@ -32,6 +33,13 @@ class AppFixtures extends Fixture
             $produit->setIdCategorie($categories[$id_categories[$i]]);
 
             $manager->persist($produit);
+        }
+
+        $tags = ["gommette", "rouge", "vert", "bleu", "noir", "rond", "carré", "triangle"];
+        for($i = 0; $i < 8; $i++) {
+            $tag = new Tag();
+            $tag->setNom($tags[$i]);
+            $manager->persist($tag);
         }
 
         $manager->flush();
